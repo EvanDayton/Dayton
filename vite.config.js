@@ -1,9 +1,19 @@
 import { defineConfig } from 'vite';
+import legacy from '@vitejs/plugin-legacy';
 
 export default defineConfig({
-  // Set the base URL for the project when it's deployed
-  base: '/Dayton/', // Replace <repository-name> with the name of your GitHub repository
+  plugins: [
+    legacy({
+      targets: ['defaults', 'not IE 11']
+    })
+  ],
+  resolve: {
+    alias: {
+      '@': '/src',
+    },
+  },
+  base: '/', // Adjust base path if necessary
   build: {
-    outDir: 'dist', // Specify the output directory for build files
-  }
+    outDir: 'dist',
+  },
 });
