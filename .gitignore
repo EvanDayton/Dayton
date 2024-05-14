@@ -6,6 +6,8 @@
 .env.local
 .env.production
 
+dist/
+
 # System files
 .DS_Store
 
